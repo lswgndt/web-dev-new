@@ -28,8 +28,8 @@ h1 {
     font-size: 2em ;
 }
 
-div #facts {
-    margin-top: 2em;
+.topPadding {
+    padding: 2.5em 1.5em 1em;
 }
 
 .somePadding {
