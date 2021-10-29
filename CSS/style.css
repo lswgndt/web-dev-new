@@ -28,7 +28,7 @@ h1 {
     font-size: 2em ;
 }
 
-ul {
+.navbar {
     list-style-type: none;
     display: flex;
     background: #a5dc99;
@@ -38,8 +38,9 @@ ul {
     text-align: center;
 }
 
+
 @media screen and (max-width: 550px){
-    ul {
+    .navbar{
         flex-direction: column;
     }
 
