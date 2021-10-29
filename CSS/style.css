@@ -28,6 +28,23 @@ h1 {
     font-size: 2em ;
 }
 
+ul {
+    list-style-type: none;
+    display: flex;
+    background: #a5dc99;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+
+@media screen and (max-width: 550px){
+    ul {
+        flex-direction: column;
+    }
+
+}
+
 .topPadding {
     padding: 2.5em 1.5em 1em;
 }
@@ -40,7 +57,8 @@ h1 {
     color: #a5dc99;
 }
 
-/* copied from https://www.codingnepalweb.com/responsive-navigation-menu-bar-design/ */
+
+/* copied from https://www.codingnepalweb.com/responsive-navigation-menu-bar-design/
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 *{
     margin: 0;
@@ -81,4 +99,4 @@ nav ul li a.active,
 nav ul li a:hover{
     color: #a5dc99;
     background: #fff;
-}
+}*/
