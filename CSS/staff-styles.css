@@ -22,7 +22,7 @@ body{
 footer {
     text-align: center;
     padding: 1em;
-    background-color: #a5dc99;
+    background-color: #ae5be0;
     color: white;
 }
 
@@ -37,7 +37,7 @@ h1 {
 .navbar {
     list-style-type: none;
     display: flex;
-    background: #a5dc99;
+    background: #c399dc;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
@@ -52,8 +52,8 @@ h1 {
     padding: 1em;
 }
 
-.light-green {
-    color: #a5dc99;
+.light-pink {
+    color: #c399dc;
 }
 
 .music-list {
@@ -86,7 +86,7 @@ h1 {
 }
 
 .music-element:nth-child(2n) {
-    background: #c9e1c3;
+    background: #c399dc;
     flex-wrap: wrap;
 }
 

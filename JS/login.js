@@ -3,7 +3,6 @@ const staff = new User("Kevin", "Cerimi", false, "5678");
 
 const users = [admin, staff];
 
-
 function check_credentials(){
     let found_user = false;
     let user_logged = null;
