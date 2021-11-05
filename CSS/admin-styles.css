@@ -56,6 +56,10 @@ h1 {
     color: #a5dc99;
 }
 
+.hide {
+    display: none;
+}
+
 .music-list {
     list-style-type: none;
     display: flex;

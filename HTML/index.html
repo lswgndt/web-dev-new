@@ -12,7 +12,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body onload="hide_log_ins()">
 
     <div id="navContainerLogIn">
         <ul class="navbar">
@@ -26,11 +26,11 @@
 <main>
 
     <div id="adminLogInButton">
-        <button type="button" onclick="show_admin_login()">Admin</button>
+        <button type="button" id="show_admin_login" onclick="show_admin_login()">Admin</button>
         <div id="adminSecretLogIn">
             <form name="adminLogIn" id="adminLogIn" method="post">
             <h1>Log In!</h1>
-            <label for="admin_username">First Name:</label><br>
+            <label for="admin_username">Username:</label><br>
             <input type="text" name="admin_username" id="admin_username" required><br>
             <label for="admin_password">Password:</label><br>
             <input type="password" name="admin_password" id="admin_password" required><br>
@@ -40,11 +40,11 @@
     </div>
 
     <div id="staffLogInButton">
-        <button type="button" onclick="show_staff_login()">Admin</button>
+        <button type="button" id="show_staff_login" onclick="show_staff_login()">Staff</button>
         <div id="staffSecretLogIn">
             <form name="adminLogIn" id="staffLogIn" method="post">
                 <h1>Log In!</h1>
-                <label for="staff_username">First Name:</label><br>
+                <label for="staff_username">Username:</label><br>
                 <input type="text" name="staff_username" id="staff_username" required><br>
                 <label for="staff_password">Password:</label><br>
                 <input type="password" name="staff_password" id="staff_password" required><br>

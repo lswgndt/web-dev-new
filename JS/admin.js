@@ -1,7 +1,6 @@
-const admin = new User("Admin", true, "Admin");
+const admin = new User("Admin",  "Admin");
 
-const max_tries = 3;
-var current_tries = 0;
+var current_tries_admin = 0;
 
 function User(username, password){
     this.username = username;
@@ -9,15 +8,18 @@ function User(username, password){
 }
 
 function admin_login() {
-    if(current_tries <= max_tries){
-        if(admin.username === document.getElementById("username").value
-            && admin.password === document.getElementById("password").value ) {
+    if(current_tries_admin < max_tries){
+        console.log("TEST")
+        if(admin.username === document.getElementById("admin_username").value
+            && admin.password === document.getElementById("admin_password").value ) {
+            console.log("TEST2")
             document.location.href = "../HTML/admin-home.html", true;
         }else {
-            current_tries += 1;
+            current_tries_admin = current_tries_admin + 1;
             alert("Login Credentials Incorrect");
         }
     }else {
         alert("Log In disabled now!");
+        disable_log_ins();
     }
 }
