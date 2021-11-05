@@ -30,10 +30,6 @@ a {
     text-decoration:none;
 }
 
-h1 {
-    font-size: 2em ;
-}
-
 .navbar {
     list-style-type: none;
     display: flex;
@@ -44,58 +40,6 @@ h1 {
     text-align: center;
 }
 
-.topPadding {
-    padding: 2.5em 1.5em 1em;
-}
-
-.somePadding {
-    padding: 1em;
-}
-
-.light-pink {
+.light-green {
     color: #a5dc99;
-}
-
-.hide {
-    display: none;
-}
-
-.music-list {
-    list-style-type: none;
-    display: flex;
-
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
-}
-
-.music-element{
-    height: 3em;
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    text-align: left;
-}
-
-.music-element p {
-    flex: 0 0 25%;
-}
-.music-element span.catty-cloud {
-    border: 1px solid black;
-    font-size: 0.6em;
-    padding: 3px;
-}
-
-.music-element:nth-child(2n) {
-    background: #c9e1c3;
-    flex-wrap: wrap;
-}
-
-@media screen and (max-width: 550px){
-    .navbar{
-        flex-direction: column;
-    }
 }

@@ -11,78 +11,100 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body onload="hide_admin_lists()">
 
-<!--
-    <nav>
-        <ul>
-            <li><a href=""><i class="fas fa-couch logo"></i></a></li>
-            <li><a href="index.html">Log Out</a></li>
-            <li><a href="#facts">Facts</a></li>
-            <li><a href="#randomText">Random Text</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
--->
-
-    <div id="navContainerHome">
+    <div id="navContainerAdmin">
         <ul class="navbar">
             <li><a href=""><i class="fas fa-couch logo"></i></a></li>
             <li><a href="index.html">Log Out</a></li>
-            <li><a href="">Admin</a></li>
-            <li><a href="">Staff</a></li>
         </ul>
     </div>
 
 <main>
 
-    <div id="adminButton">
-        <button type="button" onclick="admin_function()">Admin Button</button>
+    <div id="studentsButton">
+        <button type="button" onclick="show_students()">Students</button>
     </div>
 
-    <div class="topPadding" id="facts">
-        <h1>About me! <i class="fas fa-user-ninja light-green"></i></h1>
-        <ul id="factsTable">
-            <li>Birthday: 10.07.1999</li>
-            <li>Born in Potsdam, Germany</li>
-            <li>Loves sweets and game nights</li>
-        </ul>
+    <div id="studentContainer">
+        <button type="button" onclick="add_student_form()">Add Students</button>
+        <button type="button" onclick="update_student()">Update Students</button>
+        <button type="button" onclick="delete_student()">Delete Students</button>
     </div>
 
-    <div class="somePadding" id="randomText">
-        <h1>Some Random Text to fill the body <i class="fas fa-smile-wink light-green"></i></h1>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed tempus felis, at hendrerit est. Vivamus tincidunt eget lectus sodales ullamcorper. In nulla urna, molestie non viverra sit amet, molestie non lorem. Nulla bibendum sapien in purus porta euismod. Duis dolor nisi, sagittis ac tincidunt commodo, dapibus eu mauris. Duis dignissim fringilla urna, ultricies hendrerit velit dapibus finibus. Vestibulum rhoncus tristique molestie. Fusce id mauris eu purus dignissim congue a nec felis. Sed efficitur tortor ac dui lacinia, et pharetra lacus elementum. In malesuada egestas nibh. Praesent convallis lacus sed auctor rhoncus. Nullam tristique porta scelerisque. Quisque tempus metus eget ipsum accumsan, ac scelerisque velit pretium. Cras pharetra auctor lorem sit amet euismod.
+    <div id="addStudent">
+        <form name="addStudentForm" id="addStudentForm" method="post">
+            <label for="studentID">Student ID:</label><br>
+            <input type="text" name="studentID" id="studentID" required><br>
+            <label for="firstNameStudent">First Name:</label><br>
+            <input type="text" name="firstNameStudent" id="firstNameStudent" required><br>
+            <label for="lastNameStudent">Last Name:</label><br>
+            <input type="text" name="lastNameStudent" id="lastNameStudent" required><br>
+            <label for="dobStudent">Date Of Birth:</label><br>
+            <input type="date" name="dobStudent" id="dobStudent"><br>
+            <p>Gender:</p>
+            <input type="radio" name="genderStudent" id="maleStudent">
+            <label for="maleStudent">Male</label><br>
+            <input type="radio" name="genderStudent" id="femaleStudent">
+            <label for="femaleStudent">Female</label><br>
+            <input type="radio" name="genderStudent" id="diversStudent">
+            <label for="diversStudent">Divers</label><br>
 
-            Phasellus gravida justo quam, id dignissim nunc cursus in. Nulla pulvinar ornare odio, eget aliquam justo euismod quis. Nunc ante orci, viverra non vulputate id, convallis quis sapien. Pellentesque cursus, turpis a cursus interdum, neque mauris rhoncus nisi, ac viverra neque sem nec arcu. Proin ac libero pellentesque, bibendum lacus at, luctus metus. Proin ac urna ut metus lobortis tincidunt. Phasellus molestie orci at ex faucibus, sit amet aliquam magna rhoncus. Cras molestie ipsum sit amet odio iaculis dictum. In nisi urna, efficitur ac luctus sit amet, vestibulum sit amet nisi. Proin posuere risus diam, eget finibus sem euismod a. Suspendisse potenti. Maecenas leo leo, consectetur quis scelerisque eu, lobortis sit amet odio. Suspendisse nec sodales orci. Fusce vel nunc euismod, viverra nibh vel, pellentesque purus.
+            <label>Department
+                <select id="selectDepartmentStudent" name="department" required>
+                    <option selected>none</option>
+                    <option>Applied Computer Science</option>
+                    <option>Biology</option>
+                </select>
+            </label><br>
 
-            Aenean pretium augue id ex imperdiet, facilisis maximus est congue. Pellentesque odio sem, aliquet quis justo vel, egestas commodo urna. Proin vestibulum, sem id lobortis pretium, libero tellus dictum dui, vitae convallis nisl magna non mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer consectetur leo turpis, vitae tincidunt diam porta nec. Aenean quis vulputate sapien. Sed nec tempus quam. Quisque maximus sed orci id vehicula. Suspendisse rutrum, lacus a bibendum euismod, sem est vestibulum justo, sit amet auctor sapien lectus eget leo. Nulla ultricies ultrices ex, feugiat tincidunt velit pretium id.
+            <label for="emailStudent">Email:</label><br>
+            <input type="email" name="emailStudent" id="emailStudent" required><br>
+        </form>
+        <button type="button" onclick="add_student()">Confirm</button>
+    </div>
 
-            Aenean placerat, ipsum in posuere consequat, purus nibh imperdiet felis, in imperdiet ante eros eu mi. Nam nec dolor quis leo gravida consequat in in eros. Integer mauris erat, mollis congue condimentum id, consequat eget elit. Suspendisse et nisi massa. Sed imperdiet mauris a placerat mollis. Pellentesque quis felis felis. Nunc sed turpis sagittis, porttitor orci at, euismod dolor. Duis lobortis, libero a luctus ultricies, justo justo lobortis justo, id imperdiet sapien mi a turpis. Donec vestibulum et nisi vel pellentesque. Phasellus venenatis a velit vitae convallis. Sed vulputate lacus id malesuada mattis. Proin auctor ligula justo, sit amet placerat metus scelerisque eleifend. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean sed mauris in nisl egestas vulputate. Donec lorem quam, ultricies a consequat at, tincidunt id odio. Donec ac velit malesuada, ultrices elit sit amet, consectetur ligula.
+    <div id="staffButton">
+        <button type="button" onclick="show_staff()">Staff</button>
+    </div>
 
-            Aliquam scelerisque vehicula enim vel tempor. Nulla sollicitudin facilisis velit eu molestie. Sed imperdiet vulputate nunc mattis vestibulum. Nullam ut nisl laoreet, consectetur elit non, sollicitudin purus. Curabitur et ullamcorper dui, ut interdum odio. Suspendisse potenti. In a nisi vitae enim eleifend accumsan ultrices nec purus. Mauris aliquam neque nulla, eget commodo ligula efficitur at. Nam interdum feugiat sem sit amet porta.
+    <div id="staffContainer">
+        <button type="button" onclick="add_staff_form()">Add Staff</button>
+        <button type="button" onclick="update_staff()">Update Staff</button>
+        <button type="button" onclick="delete_staff()">Delete Staff</button>
+    </div>
 
-            Vestibulum sed neque a orci blandit placerat. Nam sed auctor urna. Ut ut dui ac nibh accumsan semper. Cras vel accumsan risus, sit amet sollicitudin nisi. Suspendisse lacinia vulputate nisl eget facilisis. Curabitur porta ante ut velit dapibus maximus. Suspendisse porta et nisi in porttitor. Fusce in ex vel urna porttitor posuere sit amet blandit odio. Mauris ut ipsum nibh. Nam cursus, tellus in gravida volutpat, tellus mi malesuada erat, vitae vehicula ante lorem quis metus.
+    <div id="addStaff">
+        <form name="addStaffForm" id="addStaffForm" method="post">
+            <label for="staffID">Staff ID:</label><br>
+            <input type="text" name="staffID" id="staffID" required><br>
+            <label for="firstNameStaff">First Name:</label><br>
+            <input type="text" name="firstNameStaff" id="firstNameStaff" required><br>
+            <label for="lastNameStaff">Last Name:</label><br>
+            <input type="text" name="lastNameStaff" id="lastNameStaff" ><br>
+            <label for="dobStaff">Date Of Birth:</label><br>
+            <input type="date" name="dobStaff" id="dobStaff"><br>
+            <p>Gender:</p>
+            <input type="radio" name="genderStaff" id="maleStaff">
+            <label for="maleStaff">Male</label><br>
+            <input type="radio" name="genderStaff" id="femaleStaff">
+            <label for="femaleStaff">Female</label><br>
+            <input type="radio" name="genderStaff" id="diversStaff">
+            <label for="diversStaff">Divers</label><br>
 
-            Aenean faucibus, diam a fermentum eleifend, erat magna laoreet tortor, vel placerat dui tortor ac odio. Integer sit amet ligula feugiat, pellentesque orci ut, vestibulum lectus. Cras posuere, justo tempus mollis euismod, est arcu tincidunt eros, sit amet ornare neque nisl ut eros. Etiam risus tortor, maximus id consequat in, sollicitudin vel mi. Quisque varius augue quam, in finibus erat volutpat eu. Nunc at quam ante. Duis convallis sapien vel nisi congue semper. Etiam accumsan arcu a nulla volutpat vestibulum. Nunc tristique eu velit eget aliquam.
-
-            Vestibulum tempor urna ut urna eleifend, ut rhoncus diam vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus a ultrices enim. Sed pellentesque, urna quis facilisis eleifend, sapien mauris aliquet quam, eu mattis lectus sem at diam. Ut metus mi, molestie non enim nec, cursus semper libero. Morbi sagittis urna nisi, id finibus enim vestibulum dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempor est odio, ac accumsan lorem tincidunt non.
-
-            Phasellus vel interdum sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur laoreet sodales lacus in aliquet. Nullam vel sagittis lacus, et volutpat elit. Cras sed venenatis velit. Vestibulum eu urna ut dolor sollicitudin lacinia. Donec blandit lobortis placerat. Vestibulum elementum placerat metus, ut venenatis augue aliquet non. Nullam mattis molestie arcu, ac vehicula tellus pellentesque blandit. Nulla id neque pharetra, viverra enim eget, vulputate tellus. Aenean nec odio et dui auctor venenatis ac eu nisl. Vestibulum neque turpis, gravida in lobortis a, tincidunt ac mi.
-
-            Donec laoreet pretium ipsum, non efficitur lorem consectetur varius. Donec ac nibh tristique nibh tincidunt accumsan. In leo nunc, varius ac mauris vel, vulputate aliquet velit. Nullam in massa orci. Integer interdum tortor id diam ultricies, at faucibus sapien semper. Pellentesque interdum euismod metus non finibus. Sed congue mi vel nulla placerat vestibulum. Nullam a rhoncus tortor. Quisque a purus vitae mi placerat malesuada. Donec consectetur lacus nec eros aliquet, et gravida turpis dapibus. Suspendisse luctus, ex vitae ullamcorper sollicitudin, nisl ligula auctor purus, et faucibus mi turpis at sem. Nunc iaculis ante faucibus libero fermentum maximus. Vestibulum vitae ipsum et dolor congue mollis non ac sem. In in gravida dui, eget commodo est.
-        </p>
+            <label for="emailStaff">Email:</label><br>
+            <input type="email" name="emailStaff" id="emailStaff" required><br>
+        </form>
+        <button type="button" onclick="add_staff()">Confirm</button>
     </div>
 </main>
 
-    <footer id="contact">
-        <p>Impressum:</p>
-        <p>Lisa-Marlen Wiegandt</p>
-        <p>Matrikel Nummer: 572770</p>
-        <p>Email: <a href="mailto:wiegandtlisa@gmail.com">wiegandtlisa@gmail.com</a></p>
-        <p>Instagram: <a href="https://www.instagram.com/ls_wgndt/">ls_wgndt</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/lisa-marlen-wiegandt-2918b31b0/">Lisa-Marlen Wiegandt</a> </p>
-    </footer>
+<footer id="contact">
+    <p>Impressum:</p>
+    <p>Lisa-Marlen Wiegandt</p>
+    <p>Matrikel Nummer: 572770</p>
+    <p>Email: <a href="mailto:wiegandtlisa@gmail.com">wiegandtlisa@gmail.com</a></p>
+</footer>
 
 </body>
 
