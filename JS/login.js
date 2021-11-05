@@ -1,42 +1,39 @@
-const admin = new User("Lisa-Marlen", "Wiegandt", true, "1234");
-const staff = new User("Kevin", "Cerimi", false, "5678");
+const admin = new User("Admin", true, "Admin");
+const staff = new User("Staff" , false, "Staff");
 
-const users = [admin, staff];
+const max_tries = 3;
+var current_tries_admin = 0;
+var current_tries_staff = 0;
 
-function check_credentials(){
-    let found_user = false;
-    let user_logged = null;
-    for(let i=0; i<users.length; i++) {
-        if(users[i].firstname === document.getElementById("fname").value
-        && users[i].lastname === document.getElementById("lname").value ) {
-            if(users[i].password === document.getElementById("password").value){
-                found_user = true;
-                user_logged = users[i];
-            }
-        }
-    }
-    return [found_user, user_logged];
-}
-
-
-function login() {
-    let logged_in = check_credentials();
-    if(logged_in[0]){
-        alert("Welcome!");
-        if(logged_in[1].superuser){
+function admin_login() {
+    if(current_tries_admin <= max_tries){
+        if(admin.username === document.getElementById("username").value
+            && admin.password === document.getElementById("password").value ) {
             document.location.href = "../HTML/admin-home.html", true;
         }else {
-            document.location.href = "../HTML/staff-home.html", true;
+            current_tries_admin += 1;
+            alert("Login Credentials Incorrect");
         }
-
     }else {
-        alert("Wrong credentials - Try again!");
+        alert("Log In disabled now!");
     }
 }
 
-function User(firstname, lastname, superuser, password){
-    this.firstname = firstname;
-    this.lastname = lastname;
-    this.superuser = superuser;
+function staff_login() {
+    if(current_tries_staff <= max_tries){
+        if(staff.username === document.getElementById("username").value
+            && staff.password === document.getElementById("password").value ) {
+            document.location.href = "../HTML/staff-home.html", true;
+        }else {
+            current_tries_staff += 1;
+            alert("Login Credentials Incorrect");
+        }
+    }else {
+        alert("Log In disabled now!");
+    }
+}
+
+function User(username, password){
+    this.username = username;
     this.password = password;
 }

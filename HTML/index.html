@@ -12,17 +12,6 @@
 </head>
 <body>
 
-<!--
-    <nav>
-        <ul>
-            <li><a href=""><i class="fas fa-couch logo"></i></a></li>
-            <li><a href="index.html">Log In</a></li>
-            <li><a href="">Facts</a></li>
-            <li><a href="">Random Text</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
-    </nav>
-   -->
     <div id="navContainerLogIn">
         <ul class="navbar">
             <li><a href=""><i class="fas fa-couch logo"></i></a></li>
@@ -34,14 +23,17 @@
     </div>
 
 <main>
+
+    <div id="adminLogInButton">
+        <button type="button" value="Log In" onclick="admin_login()">Log In</button>
+    </div>
+
     <div id="logInDiv">
         <form name="logIn" id="logIn" method="post">
             <h1>Log In!</h1>
-            <label for="fname">First Name:</label><br>
-            <input type="text" name="fname" id="fname" required><br>
-            <label for="lname">Last Name:</label><br>
-            <input type="text" name="lname" id="lname" required><br>
-            <label for="lname">Password:</label><br>
+            <label for="username">First Name:</label><br>
+            <input type="text" name="username" id="username" required><br>
+            <label for="password">Password:</label><br>
             <input type="text" name="password" id="password" required><br>
         </form>
         <button type="button" value="Log In" onclick="login()">Log In</button>
