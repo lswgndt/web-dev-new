@@ -29,14 +29,46 @@ function hide_lists(){
 
 }
 
+function get_student_list(){
+    let object = document.getElementById("selectCourse").value;
+    if(object === "webdev"){
+        hide_lists()
+        show_students_webdevelopment();
+    }
+    if(object === "basic_of_computer_science"){
+        hide_lists()
+        show_students_basic_computer_science();
+    }
+    if(object === "beginner_programming"){
+        hide_lists()
+        show_students_beginner_programming();
+    }
+}
+
 function show_students_webdevelopment(){
-    document.getElementById("webdevelopmentStudents").style.display ="block";
+    let x = document.getElementById("webdevelopmentStudents");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
 }
 
 function show_students_basic_computer_science(){
-    document.getElementById("basisComputerScienceStudents").style.display ="block";
+    let x = document.getElementById("basisComputerScienceStudents");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+
 }
 
 function show_students_beginner_programming(){
-    document.getElementById("beginnerProgrammingStudents").style.display ="block";
+    let x = document.getElementById("beginnerProgrammingStudents");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
 }

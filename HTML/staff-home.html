@@ -24,6 +24,16 @@
 <main>
 
     <div id="courses">
+
+        <label>Choose Course:
+            <select id="selectCourse" name="course" onchange="get_student_list()">
+                <option selected>none</option>
+                <option value="webdev">Webdevelopment</option>
+                <option value="basic_of_computer_science">Basics Of Computer Science</option>
+                <option value="beginner_programming">Programming For Beginners</option>
+            </select>
+        </label><br>
+
         <ul>
             <li>
                 <button type="button" onclick="show_students_webdevelopment()">Webdevelopment</button>
@@ -70,7 +80,7 @@
             </tr>
             <tr>
                 <th>123457</th>
-                <th>Azura</th>
+                <th>Azula</th>
             </tr>
             <tr>
                 <th>123458</th>
