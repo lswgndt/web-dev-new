@@ -21,3 +21,22 @@ function staff_login() {
         disable_log_ins();
     }
 }
+
+function hide_lists(){
+    document.getElementById("webdevelopmentStudents").style.display ="none";
+    document.getElementById("basisComputerScienceStudents").style.display ="none";
+    document.getElementById("beginnerProgrammingStudents").style.display ="none";
+
+}
+
+function show_students_webdevelopment(){
+    document.getElementById("webdevelopmentStudents").style.display ="block";
+}
+
+function show_students_basic_computer_science(){
+    document.getElementById("basisComputerScienceStudents").style.display ="block";
+}
+
+function show_students_beginner_programming(){
+    document.getElementById("beginnerProgrammingStudents").style.display ="block";
+}

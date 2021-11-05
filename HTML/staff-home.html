@@ -12,76 +12,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body onload="hide_lists()">
 
 <div id="navContainerHome">
     <ul class="navbar">
         <li><a href=""><i class="fas fa-couch logo"></i></a></li>
-        <li><a href="index.html">Log In</a></li>
-        <li><a href="">Facts</a></li>
-        <li><a href="">Random Text</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a href="index.html">Log Out</a></li>
     </ul>
 </div>
 
 <main>
 
-    <div id="staffButton">
-        <button type="button" onclick="staff_function()">Staff Button</button>
-    </div>
-
-    <div class="somePadding" id="randomText">
-        <h1>Some Random Text to fill the body <i class="fas fa-smile-wink light-pink"></i></h1>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed tempus felis, at hendrerit est. Vivamus tincidunt eget lectus sodales ullamcorper. In nulla urna, molestie non viverra sit amet, molestie non lorem. Nulla bibendum sapien in purus porta euismod. Duis dolor nisi, sagittis ac tincidunt commodo, dapibus eu mauris. Duis dignissim fringilla urna, ultricies hendrerit velit dapibus finibus. Vestibulum rhoncus tristique molestie. Fusce id mauris eu purus dignissim congue a nec felis. Sed efficitur tortor ac dui lacinia, et pharetra lacus elementum. In malesuada egestas nibh. Praesent convallis lacus sed auctor rhoncus. Nullam tristique porta scelerisque. Quisque tempus metus eget ipsum accumsan, ac scelerisque velit pretium. Cras pharetra auctor lorem sit amet euismod.
-
-            Phasellus gravida justo quam, id dignissim nunc cursus in. Nulla pulvinar ornare odio, eget aliquam justo euismod quis. Nunc ante orci, viverra non vulputate id, convallis quis sapien. Pellentesque cursus, turpis a cursus interdum, neque mauris rhoncus nisi, ac viverra neque sem nec arcu. Proin ac libero pellentesque, bibendum lacus at, luctus metus. Proin ac urna ut metus lobortis tincidunt. Phasellus molestie orci at ex faucibus, sit amet aliquam magna rhoncus. Cras molestie ipsum sit amet odio iaculis dictum. In nisi urna, efficitur ac luctus sit amet, vestibulum sit amet nisi. Proin posuere risus diam, eget finibus sem euismod a. Suspendisse potenti. Maecenas leo leo, consectetur quis scelerisque eu, lobortis sit amet odio. Suspendisse nec sodales orci. Fusce vel nunc euismod, viverra nibh vel, pellentesque purus.
-
-            Aenean pretium augue id ex imperdiet, facilisis maximus est congue. Pellentesque odio sem, aliquet quis justo vel, egestas commodo urna. Proin vestibulum, sem id lobortis pretium, libero tellus dictum dui, vitae convallis nisl magna non mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer consectetur leo turpis, vitae tincidunt diam porta nec. Aenean quis vulputate sapien. Sed nec tempus quam. Quisque maximus sed orci id vehicula. Suspendisse rutrum, lacus a bibendum euismod, sem est vestibulum justo, sit amet auctor sapien lectus eget leo. Nulla ultricies ultrices ex, feugiat tincidunt velit pretium id.
-
-            Aenean placerat, ipsum in posuere consequat, purus nibh imperdiet felis, in imperdiet ante eros eu mi. Nam nec dolor quis leo gravida consequat in in eros. Integer mauris erat, mollis congue condimentum id, consequat eget elit. Suspendisse et nisi massa. Sed imperdiet mauris a placerat mollis. Pellentesque quis felis felis. Nunc sed turpis sagittis, porttitor orci at, euismod dolor. Duis lobortis, libero a luctus ultricies, justo justo lobortis justo, id imperdiet sapien mi a turpis. Donec vestibulum et nisi vel pellentesque. Phasellus venenatis a velit vitae convallis. Sed vulputate lacus id malesuada mattis. Proin auctor ligula justo, sit amet placerat metus scelerisque eleifend. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean sed mauris in nisl egestas vulputate. Donec lorem quam, ultricies a consequat at, tincidunt id odio. Donec ac velit malesuada, ultrices elit sit amet, consectetur ligula.
-
-            Aliquam scelerisque vehicula enim vel tempor. Nulla sollicitudin facilisis velit eu molestie. Sed imperdiet vulputate nunc mattis vestibulum. Nullam ut nisl laoreet, consectetur elit non, sollicitudin purus. Curabitur et ullamcorper dui, ut interdum odio. Suspendisse potenti. In a nisi vitae enim eleifend accumsan ultrices nec purus. Mauris aliquam neque nulla, eget commodo ligula efficitur at. Nam interdum feugiat sem sit amet porta.
-
-            Vestibulum sed neque a orci blandit placerat. Nam sed auctor urna. Ut ut dui ac nibh accumsan semper. Cras vel accumsan risus, sit amet sollicitudin nisi. Suspendisse lacinia vulputate nisl eget facilisis. Curabitur porta ante ut velit dapibus maximus. Suspendisse porta et nisi in porttitor. Fusce in ex vel urna porttitor posuere sit amet blandit odio. Mauris ut ipsum nibh. Nam cursus, tellus in gravida volutpat, tellus mi malesuada erat, vitae vehicula ante lorem quis metus.
-
-            Aenean faucibus, diam a fermentum eleifend, erat magna laoreet tortor, vel placerat dui tortor ac odio. Integer sit amet ligula feugiat, pellentesque orci ut, vestibulum lectus. Cras posuere, justo tempus mollis euismod, est arcu tincidunt eros, sit amet ornare neque nisl ut eros. Etiam risus tortor, maximus id consequat in, sollicitudin vel mi. Quisque varius augue quam, in finibus erat volutpat eu. Nunc at quam ante. Duis convallis sapien vel nisi congue semper. Etiam accumsan arcu a nulla volutpat vestibulum. Nunc tristique eu velit eget aliquam.
-
-            Vestibulum tempor urna ut urna eleifend, ut rhoncus diam vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus a ultrices enim. Sed pellentesque, urna quis facilisis eleifend, sapien mauris aliquet quam, eu mattis lectus sem at diam. Ut metus mi, molestie non enim nec, cursus semper libero. Morbi sagittis urna nisi, id finibus enim vestibulum dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempor est odio, ac accumsan lorem tincidunt non.
-
-            Phasellus vel interdum sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur laoreet sodales lacus in aliquet. Nullam vel sagittis lacus, et volutpat elit. Cras sed venenatis velit. Vestibulum eu urna ut dolor sollicitudin lacinia. Donec blandit lobortis placerat. Vestibulum elementum placerat metus, ut venenatis augue aliquet non. Nullam mattis molestie arcu, ac vehicula tellus pellentesque blandit. Nulla id neque pharetra, viverra enim eget, vulputate tellus. Aenean nec odio et dui auctor venenatis ac eu nisl. Vestibulum neque turpis, gravida in lobortis a, tincidunt ac mi.
-
-            Donec laoreet pretium ipsum, non efficitur lorem consectetur varius. Donec ac nibh tristique nibh tincidunt accumsan. In leo nunc, varius ac mauris vel, vulputate aliquet velit. Nullam in massa orci. Integer interdum tortor id diam ultricies, at faucibus sapien semper. Pellentesque interdum euismod metus non finibus. Sed congue mi vel nulla placerat vestibulum. Nullam a rhoncus tortor. Quisque a purus vitae mi placerat malesuada. Donec consectetur lacus nec eros aliquet, et gravida turpis dapibus. Suspendisse luctus, ex vitae ullamcorper sollicitudin, nisl ligula auctor purus, et faucibus mi turpis at sem. Nunc iaculis ante faucibus libero fermentum maximus. Vestibulum vitae ipsum et dolor congue mollis non ac sem. In in gravida dui, eget commodo est.
-        </p>
-    </div>
-
-    <div id="flexTable">
-        <ul class="music-list">
-            <li class="music-element">
-                <p>1. One Dance</p>
-                <p>Crake feat CatKid &amp; Cyla</p>
-                <p>2:54</p>
-                <p><span class=”catty-cloud”>CATTY CLOUD SYNC</span></p>
+    <div id="courses">
+        <ul>
+            <li>
+                <button type="button" onclick="show_students_webdevelopment()">Webdevelopment</button>
             </li>
-            <li class="music-element">
-                <p>2. Panda</p>
-                <p>Cattee</p> <p>4:06</p>
-                <p><span class=”catty-cloud”>CATTY CLOUD SYNC</span></p>
+            <li>
+                <button type="button" onclick="show_students_basic_computer_science()">Basics Of Computer Science</button>
             </li>
-            <li class="music-element">
-                <p>3. Can’t Stop the Feeling!</p>
-                <p>Catin Cimberlake</p>
-                <p>3:56</p>
-                <p><span class=”catty-cloud”>CATTY CLOUD SYNC</span></p>
-            </li>
-            <li class="music-element">
-                <p>4. Work From Home</p>
-                <p>Cat Harmony feat Colla</p>
-                <p>3:34</p>
-                <p><span class=”catty-cloud”>CATTY CLOUD SYNC</span></p>
+            <li>
+                <button type="button" onclick="show_students_beginner_programming()">Programming For Beginners</button>
             </li>
         </ul>
     </div>
+
+    <div id="webdevelopmentStudents">
+        <table>
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+            </tr>
+            <tr>
+                <th>123456</th>
+                <th>Katara</th>
+            </tr>
+            <tr>
+                <th>123457</th>
+                <th>Aang</th>
+            </tr>
+            <tr>
+                <th>123458</th>
+                <th>Soka</th>
+            </tr>
+        </table>
+    </div>
+
+    <div id="basisComputerScienceStudents">
+        <table>
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+            </tr>
+            <tr>
+                <th>123456</th>
+                <th>Thai Lee</th>
+            </tr>
+            <tr>
+                <th>123457</th>
+                <th>Azura</th>
+            </tr>
+            <tr>
+                <th>123458</th>
+                <th>Mai</th>
+            </tr>
+        </table>
+    </div>
+
+    <div id="beginnerProgrammingStudents">
+        <table>
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+            </tr>
+            <tr>
+                <th>123456</th>
+                <th>Zuko</th>
+            </tr>
+            <tr>
+                <th>123457</th>
+                <th>Iroh</th>
+            </tr>
+            <tr>
+                <th>123458</th>
+                <th>Osai</th>
+            </tr>
+        </table>
+    </div>
+
 </main>
 
 <footer id="contact">
