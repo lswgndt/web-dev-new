@@ -5,6 +5,8 @@
     <title>Lisa-Marlen Wiegandt</title>
     <link rel="stylesheet" href="../CSS/admin-styles.css"/>
     <script src="../JS/login.js"></script>
+    <script src="../JS/staff.js"></script>
+    <script src="../JS/admin.js"></script>
     <!-- FontAwesome Free Kit for cool Icons -->
     <script src="https://kit.fontawesome.com/07529d1141.js" crossorigin="anonymous"></script>
 
@@ -16,27 +18,39 @@
         <ul class="navbar">
             <li><a href=""><i class="fas fa-couch logo"></i></a></li>
             <li><a href="index.html">Log In</a></li>
-            <li><a href="">Facts</a></li>
-            <li><a href="">Random Text</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a href="">Admin</a></li>
+            <li><a href="">Staff</a></li>
         </ul>
     </div>
 
 <main>
 
     <div id="adminLogInButton">
-        <button type="button" value="Log In" onclick="admin_login()">Log In</button>
+        <button type="button" onclick="show_admin_login()">Admin</button>
+        <div id="adminSecretLogIn">
+            <form name="adminLogIn" id="adminLogIn" method="post">
+            <h1>Log In!</h1>
+            <label for="admin_username">First Name:</label><br>
+            <input type="text" name="admin_username" id="admin_username" required><br>
+            <label for="admin_password">Password:</label><br>
+            <input type="password" name="admin_password" id="admin_password" required><br>
+            </form>
+            <button type="button" onclick="admin_login()">Admin Log In</button>
+        </div>
     </div>
 
-    <div id="logInDiv">
-        <form name="logIn" id="logIn" method="post">
-            <h1>Log In!</h1>
-            <label for="username">First Name:</label><br>
-            <input type="text" name="username" id="username" required><br>
-            <label for="password">Password:</label><br>
-            <input type="text" name="password" id="password" required><br>
-        </form>
-        <button type="button" value="Log In" onclick="login()">Log In</button>
+    <div id="staffLogInButton">
+        <button type="button" onclick="show_staff_login()">Admin</button>
+        <div id="staffSecretLogIn">
+            <form name="adminLogIn" id="staffLogIn" method="post">
+                <h1>Log In!</h1>
+                <label for="staff_username">First Name:</label><br>
+                <input type="text" name="staff_username" id="staff_username" required><br>
+                <label for="staff_password">Password:</label><br>
+                <input type="password" name="staff_password" id="staff_password" required><br>
+            </form>
+            <button type="button" onclick="staff_login()">Staff Log In</button>
+        </div>
     </div>
 </main>
 
