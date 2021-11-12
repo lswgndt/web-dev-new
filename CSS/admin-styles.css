@@ -43,3 +43,7 @@ a {
 .light-green {
     color: #a5dc99;
 }
+
+table, th, td {
+    border:1px solid black;
+}
