@@ -28,35 +28,18 @@
 
     <div id="studentContainer">
         <div id="studentlist">
-            <table style="width: 100%">
+            <table id="studentTable" >
                 <tr>
-                    <th>Matriculationnumber</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Department ID</th>
-                    <th>Joining Date</th>
+                    <th onclick="sort_student_list(0)">Student ID</th>
+                    <th onclick="sort_student_list(1)">First Name</th>
+                    <th onclick="sort_student_list(2)">Last Name</th>
+                    <th>Date Of Birth</th>
+                    <th>Gender</th>
+                    <th onclick="sort_student_list(3)">Department ID</th>
+                    <th>Email</th>
+                    <th onclick="sort_student_list(4)">Joining Date</th>
                 </tr>
-                <tr>
-                    <td>572770</td>
-                    <td>Lisa-Marlen</td>
-                    <td>Wiegandt</td>
-                    <td>01</td>
-                    <td>2019-10-01</td>
-                </tr>
-                <tr>
-                    <td>123456</td>
-                    <td>Itchigo</td>
-                    <td>Kurosaki</td>
-                    <td>02</td>
-                    <td>2021-04-01</td>
-                </tr>
-                <tr>
-                    <td>123457</td>
-                    <td>Orihme</td>
-                    <td>Inue</td>
-                    <td>03</td>
-                    <td>2020-02-29</td>
-                </tr>
+                <div id="insertStudentsHere"></div>
             </table>
         </div>
 
@@ -105,10 +88,12 @@
         <div id="stafflist">
             <table style="width: 100%">
                 <tr>
-                    <th>Staffnumber</th>
+                    <th>Staff ID</th>
                     <th>First Name</th>
                     <th>Last Name</th>
-                    <th>Department ID</th>
+                    <th>Date Of Birth</th>
+                    <th>Gender</th>
+                    <th>Email</th>
                     <th>Joining Date</th>
                 </tr>
                 <tr>

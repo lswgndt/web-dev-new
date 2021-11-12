@@ -44,6 +44,17 @@ a {
     color: #a5dc99;
 }
 
-table, th, td {
-    border:1px solid black;
+table {
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #a5dc99;
+}
+
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #a5dc99
 }
