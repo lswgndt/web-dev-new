@@ -3,6 +3,8 @@ const admin = new User("Admin",  "Admin");
 const summer_sem_start = 4;
 const summer_sem_end = 9;
 
+var today;
+
 
 var current_tries_admin = 0;
 
@@ -26,13 +28,24 @@ function admin_login() {
     }
 }
 
-function hide_admin_lists(){
+function setup(){
     document.getElementById("studentContainer").style.display ="none";
     document.getElementById("staffContainer").style.display ="none";
     document.getElementById("addStudent").style.display ="none";
     document.getElementById("addStaff").style.display ="none";
 
-    fill_students_list(); //initially set up table
+    fill_students_list(students); //initially set up table
+
+    today = new Date();
+    let dd = today.getDate()-1;
+    let mm = today.getMonth() + 1; //January is 0!
+    let yyyy = today.getFullYear();
+    if (dd < 10) { dd = '0' + dd; }
+    if (mm < 10) { mm = '0' + mm; }
+
+    let todayString = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("dobStudent").setAttribute("max", todayString);
+    document.getElementById("dobStaff").setAttribute("max", todayString);
 }
 
 function show_students() {
@@ -44,61 +57,93 @@ function show_students() {
     }
 }
 
-function fill_students_list(){
+function fill_students_list(source){
     let tbodyRef = document.getElementById("studentTable").getElementsByTagName("tbody")[0];
 
-    for(let i = 0; i < students.length; i++){
+    for(let i = 0; i < source.length; i++){
         let newRow = tbodyRef.insertRow(0);
 
         let newCell = newRow.insertCell();
-        newCell.innerText = students[i]._id;
+        newCell.innerText = source[i]._id;
 
         newCell = newRow.insertCell();
-        newCell.innerText = students[i].firstName;
+        newCell.innerText = source[i].firstName;
 
         newCell = newRow.insertCell();
-        newCell.innerText = students[i].lastName;
+        newCell.innerText = source[i].lastName;
 
         newCell = newRow.insertCell();
-        newCell.innerText = students[i].dob;
+        newCell.innerText = source[i].dob;
 
         newCell = newRow.insertCell();
-        newCell.innerText = students[i].gender;
+        newCell.innerText = source[i].gender;
 
         newCell = newRow.insertCell();
-        newCell.innerText = students[i].department;
+        newCell.innerText = source[i].department;
 
         newCell = newRow.insertCell();
-        newCell.innerText = students[i].email;
+        newCell.innerText = source[i].email;
 
         newCell = newRow.insertCell();
-        newCell.innerText = students[i].joiningDate;
+        newCell.innerText = source[i].joiningDate;
     }
 }
 
 function filter_for_department(){
     let department = document.getElementById("selectDepartment").value;
+    let result = 0;
     if(department === "appliedComputerScience"){
-        students.filter(student => summer_sem_start >= split_the_month(student.joiningDate) && summer_sem_end <= split_the_month(student.joiningDate));
+       result = students.filter(student => student.department === "Applied Computer Science");
     }
-    if(department === "winter"){
-        students.filter(student => summer_sem_start < split_the_month(student.joiningDate) && summer_sem_end > split_the_month(student.joiningDate));
+    if(department === "mathematics"){
+        result = students.filter(student => student.department === "Mathematics");
     }
+    else{
+        result = students;
+    }
+
+    clear_table();
+    fill_students_list(result);
 }
 
 function filter_for_semester(){
     let semester = document.getElementById("selectSemester").value;
+    let result = 0;
     if(semester === "Summer"){
-        students.filter(student => summer_sem_start >= split_the_month(student.joiningDate) && summer_sem_end <= split_the_month(student.joiningDate));
+        result = students.filter(student => summer_sem_start >= split_the_month(student.joiningDate) && summer_sem_end <= split_the_month(student.joiningDate));
     }
     if(semester === "winter"){
-        students.filter(student => summer_sem_start < split_the_month(student.joiningDate) && summer_sem_end > split_the_month(student.joiningDate));
+        result = students.filter(student => summer_sem_start < split_the_month(student.joiningDate) && summer_sem_end > split_the_month(student.joiningDate));
     }
+    else{
+        result = students;
+    }
+
+    clear_table()
+    fill_students_list(result);
 }
 
 function split_the_month(date){
-    var dateArray = date.split('-'); //splits YYYY-MM-DD into [(YYYY),(MM),(DD)]
+    let dateArray = date.split('-'); //splits YYYY-MM-DD into [(YYYY),(MM),(DD)]
     return dateArray[1];
+}
+
+function clear_table() {
+    let tbodyRef = document.getElementById("studentTable").getElementsByTagName("tbody")[0];
+    let new_tbody = document.createElement('tbody');
+    tbodyRef.parentNode.replaceChild(new_tbody, tbodyRef)
+}
+
+function check_age(){
+    let selectedDate = document.getElementById("dobStudent").value;
+/*
+    if(selectedDate){
+
+    }else{
+        alert("Invalid Date Of Birth!");
+    }
+    
+ */
 }
 
 function add_student_form(){

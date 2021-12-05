@@ -38,7 +38,7 @@ const students = [
         "firstName": "Amber",
         "lastName": "Irwin",
         "dob": "2003-6-16",
-        "gender": "female",
+        "gender": "divers",
         "department": "Applied Computer Science",
         "email": "amberirwin@quarex.com",
         "joiningDate": "2018-1-6"
@@ -82,7 +82,7 @@ const students = [
         "firstName": "Acevedo",
         "lastName": "Stuart",
         "dob": "1993-11-24",
-        "gender": "male",
+        "gender": "divers",
         "department": "Applied Computer Science",
         "email": "acevedostuart@quarex.com",
         "joiningDate": "2015-1-25"

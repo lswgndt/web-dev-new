@@ -12,7 +12,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body onload="hide_admin_lists()">
+<body onload="setup()">
 
 <article>
 
@@ -89,7 +89,7 @@
             <label for="lastNameStudent">Last Name:</label><br>
             <input type="text" name="lastNameStudent" id="lastNameStudent" required><br>
             <label for="dobStudent">Date Of Birth:</label><br>
-            <input type="date" name="dobStudent" id="dobStudent"><br>
+            <input type="date" name="dobStudent" id="dobStudent" onchange="check_age()"><br>
             <p>Gender:</p>
             <input type="radio" name="genderStudent" id="maleStudent">
             <label for="maleStudent">Male</label><br>
@@ -102,12 +102,14 @@
                 <select id="selectDepartmentStudent" name="department" required>
                     <option selected>none</option>
                     <option>Applied Computer Science</option>
-                    <option>Biology</option>
+                    <option>Mathematics</option>
                 </select>
             </label><br>
 
             <label for="emailStudent">Email:</label><br>
             <input type="email" name="emailStudent" id="emailStudent" required><br>
+            <label for="joiningDate">Joining Date:</label><br>
+            <input type="date" name="joiningDate" id="joiningDate" min="2015-01-01"><br>
         </form>
         <button type="button" onclick="add_student()">Confirm</button>
     </div>
