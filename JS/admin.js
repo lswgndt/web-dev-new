@@ -3,7 +3,10 @@ const admin = new User("Admin",  "Admin");
 const summer_sem_start = 4;
 const summer_sem_end = 9;
 
-var today;
+const max_age = 60;
+const min_age = 17;
+
+var today = new Date();
 
 
 var current_tries_admin = 0;
@@ -36,7 +39,6 @@ function setup(){
 
     fill_students_list(students); //initially set up table
 
-    today = new Date();
     let dd = today.getDate()-1;
     let mm = today.getMonth() + 1; //January is 0!
     let yyyy = today.getFullYear();
@@ -92,15 +94,21 @@ function fill_students_list(source){
 function filter_for_department(){
     let department = document.getElementById("selectDepartment").value;
     let result = 0;
+    console.log(department);
     if(department === "appliedComputerScience"){
+        console.log("TEST");
        result = students.filter(student => student.department === "Applied Computer Science");
     }
-    if(department === "mathematics"){
+    else if(department === "mathematics"){
         result = students.filter(student => student.department === "Mathematics");
+    }
+    else if(department === "biology"){
+        result = students.filter(student => student.department === "Biology");
     }
     else{
         result = students;
     }
+    console.log(result);
 
     clear_table();
     fill_students_list(result);
@@ -136,14 +144,15 @@ function clear_table() {
 
 function check_age(){
     let selectedDate = document.getElementById("dobStudent").value;
-/*
-    if(selectedDate){
+    let oldest = new Date(today);
+    oldest.setFullYear(today.getFullYear() - max_age);
+    let youngest = new Date(today);
+    youngest.setFullYear(today.getFullYear() - min_age);
 
-    }else{
+    if(selectedDate <= oldest || youngest <= selectedDate){
         alert("Invalid Date Of Birth!");
+        document.getElementById("dobStudent").value = null;
     }
-    
- */
 }
 
 function add_student_form(){

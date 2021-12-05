@@ -53,6 +53,7 @@
                     <option selected>none</option>
                     <option value="appliedComputerScience">Applied Computer Science</option>
                     <option value="mathematics">Mathematics</option>
+                    <option value="biology">Biology</option>
                 </select>
             </label><br>
         </div>
@@ -89,7 +90,7 @@
             <label for="lastNameStudent">Last Name:</label><br>
             <input type="text" name="lastNameStudent" id="lastNameStudent" required><br>
             <label for="dobStudent">Date Of Birth:</label><br>
-            <input type="date" name="dobStudent" id="dobStudent" onchange="check_age()"><br>
+            <input type="date" name="dobStudent" id="dobStudent" onblur="check_age()"><br>
             <p>Gender:</p>
             <input type="radio" name="genderStudent" id="maleStudent">
             <label for="maleStudent">Male</label><br>
@@ -101,8 +102,9 @@
             <label>Department
                 <select id="selectDepartmentStudent" name="department" required>
                     <option selected>none</option>
-                    <option>Applied Computer Science</option>
-                    <option>Mathematics</option>
+                    <option value="appliedComputerScience">Applied Computer Science</option>
+                    <option value="mathematics">Mathematics</option>
+                    <option value="biology">Biology</option>
                 </select>
             </label><br>
 
