@@ -1,4 +1,4 @@
-const staff = new User("Staff" ,  "Staff");
+const staffLogIn = new User("Staff" ,  "Staff");
 
 var current_tries_staff = 0;
 
@@ -9,8 +9,8 @@ function User(username, password){
 
 function staff_login() {
     if(current_tries_staff < max_tries){
-        if(staff.username === document.getElementById("staff_username").value
-            && staff.password === document.getElementById("staff_password").value ) {
+        if(staffLogIn.username === document.getElementById("staff_username").value
+            && staffLogIn.password === document.getElementById("staff_password").value ) {
             document.location.href = "../HTML/staff-home.html", true;
         }else {
             current_tries_staff = current_tries_staff + 1;
@@ -22,53 +22,53 @@ function staff_login() {
     }
 }
 
-function hide_lists(){
-    document.getElementById("webdevelopmentStudents").style.display ="none";
-    document.getElementById("basisComputerScienceStudents").style.display ="none";
-    document.getElementById("beginnerProgrammingStudents").style.display ="none";
-
+function setup_staff(){
+    document.getElementById("studentTableStaff").style.display ="none";
 }
 
-function get_student_list(){
-    let object = document.getElementById("selectCourse").value;
-    if(object === "webdev"){
-        hide_lists()
-        show_students_webdevelopment();
+function filter_for_course(){
+    let course = document.getElementById("selectCourse").value;
+    let result = 0;
+
+    if(course === "webdev"){
+        result = students.filter(student => student.course === "Webdevelopment");
+        document.getElementById("studentTableStaff").style.display ="block";
     }
-    if(object === "basic_of_computer_science"){
-        hide_lists()
-        show_students_basic_computer_science();
+    else if(course === "basic_of_computer_science"){
+        result = students.filter(student => student.course === "Basics Of Computer Science");
+        document.getElementById("studentTableStaff").style.display ="block";
     }
-    if(object === "beginner_programming"){
-        hide_lists()
-        show_students_beginner_programming();
+    else if(course === "beginner_programming"){
+        result = students.filter(student => student.course === "Programming For Beginners");
+        document.getElementById("studentTableStaff").style.display ="block";
+    }
+    else{
+        document.getElementById("studentTableStaff").style.display ="none";
+    }
+
+    clear_table();
+    fill_students_list(result);
+}
+
+function fill_students_list(source){
+    let tbodyRef = document.getElementById("studentTableStaff").getElementsByTagName("tbody")[0];
+    
+    for(let i = 0; i < source.length; i++){
+        let newRow = tbodyRef.insertRow(0);
+
+        let newCell = newRow.insertCell();
+        newCell.innerText = source[i]._id;
+
+        newCell = newRow.insertCell();
+        newCell.innerText = source[i].firstName;
+
+        newCell = newRow.insertCell();
+        newCell.innerText = source[i].lastName;
     }
 }
 
-function show_students_webdevelopment(){
-    let x = document.getElementById("webdevelopmentStudents");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
-
-function show_students_basic_computer_science(){
-    let x = document.getElementById("basisComputerScienceStudents");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-
-}
-
-function show_students_beginner_programming(){
-    let x = document.getElementById("beginnerProgrammingStudents");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
+function clear_table() {
+    let tbodyRef = document.getElementById("studentTableStaff").getElementsByTagName("tbody")[0];
+    let new_tbody = document.createElement('tbody');
+    tbodyRef.parentNode.replaceChild(new_tbody, tbodyRef)
 }

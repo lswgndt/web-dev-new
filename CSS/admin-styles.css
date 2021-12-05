@@ -15,8 +15,6 @@ html *
 }
 
 body{
-    /* display: flex;
-     flex-direction: column; Stack the flex-items (main and footer elements) vertically NOT horizontally*/
     width: 100%;
     min-height: 100%;
 }
@@ -74,9 +72,4 @@ th, td {
 
 tr:nth-child(even) {
     background-color: #a5dc99
-}
-
-.studentsButton{
-    grid-column-start: 3;
-    grid-column-end: 3;
 }
