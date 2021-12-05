@@ -38,6 +38,7 @@ function setup(){
     document.getElementById("addStaff").style.display ="none";
 
     fill_students_list(students); //initially set up table
+    fill_staff_list(staff);
 
     let dd = today.getDate()-1;
     let mm = today.getMonth() + 1; //January is 0!
@@ -179,6 +180,32 @@ function show_staff() {
     }
 }
 
+function fill_staff_list(source){
+    let tbodyRef = document.getElementById("staffTable").getElementsByTagName("tbody")[0];
+
+    for(let i = 0; i < source.length; i++){
+        let newRow = tbodyRef.insertRow(0);
+
+        let newCell = newRow.insertCell();
+        newCell.innerText = source[i]._id;
+
+        newCell = newRow.insertCell();
+        newCell.innerText = source[i].firstName;
+
+        newCell = newRow.insertCell();
+        newCell.innerText = source[i].lastName;
+
+        newCell = newRow.insertCell();
+        newCell.innerText = source[i].dob;
+
+        newCell = newRow.insertCell();
+        newCell.innerText = source[i].gender;
+
+        newCell = newRow.insertCell();
+        newCell.innerText = source[i].email;
+    }
+}
+
 function add_staff_form(){
     let x = document.getElementById("addStaff");
     if (x.style.display === "none") {
@@ -187,6 +214,8 @@ function add_staff_form(){
         x.style.display = "none";
     }
 }
+
+
 
 function add_staff(){}
 

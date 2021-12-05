@@ -62,7 +62,7 @@
             <table id="studentTable" >
                 <thead>
                 <tr>
-                    <th >Student ID</th>
+                    <th>Student ID</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Date Of Birth</th>
@@ -98,7 +98,7 @@
             <input type="radio" name="genderStudent" id="diverseStudent">
             <label for="diverseStudent">Diverse</label><br>
 
-            <label>Department
+            <label>Department:
                 <select id="selectDepartmentStudent" name="department" required>
                     <option selected>none</option>
                     <option value="appliedComputerScience">Applied Computer Science</option>
@@ -120,8 +120,14 @@
     </div>
 
     <div id="staffContainer">
+
+        <button type="button" onclick="add_staff_form()">Add Staff</button>
+        <button type="button" onclick="update_staff()">Update Staff</button>
+        <button type="button" onclick="delete_staff()">Delete Staff</button>
+
         <div id="stafflist">
-            <table style="width: 100%">
+            <table id="staffTable" >
+                <thead>
                 <tr>
                     <th>Staff ID</th>
                     <th>First Name</th>
@@ -129,34 +135,14 @@
                     <th>Date Of Birth</th>
                     <th>Gender</th>
                     <th>Email</th>
-                    <th>Joining Date</th>
                 </tr>
-                <tr>
-                    <td>234567</td>
-                    <td>Kevin</td>
-                    <td>Cerimi</td>
-                    <td>01</td>
-                    <td>2019-12-24</td>
-                </tr>
-                <tr>
-                    <td>234568</td>
-                    <td>Gaucho</td>
-                    <td>Greenwood</td>
-                    <td>02</td>
-                    <td>2020-02-29</td>
-                </tr>
-                <tr>
-                    <td>234569</td>
-                    <td>Rykia</td>
-                    <td>Kuschiki</td>
-                    <td>03</td>
-                    <td>2021-03-30</td>
-                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
             </table>
         </div>
-        <button type="button" onclick="add_staff_form()">Add Staff</button>
-        <button type="button" onclick="update_staff()">Update Staff</button>
-        <button type="button" onclick="delete_staff()">Delete Staff</button>
+
     </div>
 
     <div id="addStaff">
@@ -168,7 +154,7 @@
             <label for="lastNameStaff">Last Name:</label><br>
             <input type="text" name="lastNameStaff" id="lastNameStaff" ><br>
             <label for="dobStaff">Date Of Birth:</label><br>
-            <input type="date" name="dobStaff" id="dobStaff"><br>
+            <input type="date" name="dobStaff" id="dobStaff" oninput="check_age()"><br>
             <p>Gender:</p>
             <input type="radio" name="genderStaff" id="maleStaff">
             <label for="maleStaff">Male</label><br>
@@ -176,6 +162,7 @@
             <label for="femaleStaff">Female</label><br>
             <input type="radio" name="genderStaff" id="diverseStaff">
             <label for="diverseStaff">Diverse</label><br>
+
 
             <label for="emailStaff">Email:</label><br>
             <input type="email" name="emailStaff" id="emailStaff" required><br>

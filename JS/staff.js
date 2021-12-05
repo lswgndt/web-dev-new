@@ -52,7 +52,7 @@ function filter_for_course(){
 
 function fill_students_list(source){
     let tbodyRef = document.getElementById("studentTableStaff").getElementsByTagName("tbody")[0];
-    
+
     for(let i = 0; i < source.length; i++){
         let newRow = tbodyRef.insertRow(0);
 
