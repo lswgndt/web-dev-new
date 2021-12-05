@@ -60,7 +60,7 @@ const students = [
         "firstName": "Hooper",
         "lastName": "Byrd",
         "dob": "1985-1-22",
-        "gender": "divers",
+        "gender": "diverse",
         "department": "Applied Computer Science",
         "email": "hooperbyrd@mazuda.com",
         "joiningDate": "2016-3-14"
@@ -71,7 +71,7 @@ const students = [
         "firstName": "Greer",
         "lastName": "England",
         "dob": "1988-5-6",
-        "gender": "divers",
+        "gender": "diverse",
         "department": "Mathematics",
         "email": "greerengland@mazuda.com",
         "joiningDate": "2017-6-13"
@@ -93,7 +93,7 @@ const students = [
         "firstName": "Pace",
         "lastName": "Thompson",
         "dob": "1978-7-25",
-        "gender": "divers",
+        "gender": "diverse",
         "department": "Mathematics",
         "email": "pacethompson@mazuda.com",
         "joiningDate": "2022-2-20"
@@ -126,7 +126,7 @@ const students = [
         "firstName": "Tamra",
         "lastName": "Vargas",
         "dob": "1971-7-28",
-        "gender": "divers",
+        "gender": "diverse",
         "department": "Biology",
         "email": "tamravargas@mazuda.com",
         "joiningDate": "2022-4-5"
@@ -148,7 +148,7 @@ const students = [
         "firstName": "Spence",
         "lastName": "Floyd",
         "dob": "1967-12-7",
-        "gender": "divers",
+        "gender": "diverse",
         "department": "Biology",
         "email": "spencefloyd@mazuda.com",
         "joiningDate": "2017-10-2"
@@ -273,7 +273,7 @@ const staff = [
         "firstName": "Leona",
         "lastName": "Hurst",
         "dob": "1986-8-18",
-        "gender": "divers",
+        "gender": "diverse",
         "email": "leonahurst@mazuda.com"
     },
     {
@@ -300,7 +300,7 @@ const staff = [
         "firstName": "Bridget",
         "lastName": "Reed",
         "dob": "1976-3-20",
-        "gender": "divers",
+        "gender": "diverse",
         "email": "bridgetreed@mazuda.com"
     },
     {
@@ -309,7 +309,7 @@ const staff = [
         "firstName": "Verna",
         "lastName": "Kelly",
         "dob": "1997-2-8",
-        "gender": "divers",
+        "gender": "diverse",
         "email": "vernakelly@mazuda.com"
     },
     {
@@ -327,7 +327,7 @@ const staff = [
         "firstName": "Dorsey",
         "lastName": "Rasmussen",
         "dob": "1993-11-2",
-        "gender": "divers",
+        "gender": "diverse",
         "email": "dorseyrasmussen@mazuda.com"
     },
     {
@@ -363,7 +363,7 @@ const staff = [
         "firstName": "Cheryl",
         "lastName": "Howell",
         "dob": "1965-3-1",
-        "gender": "divers",
+        "gender": "diverse",
         "email": "cherylhowell@mazuda.com"
     },
     {
@@ -399,7 +399,7 @@ const staff = [
         "firstName": "Laverne",
         "lastName": "Peterson",
         "dob": "1986-12-18",
-        "gender": "divers",
+        "gender": "diverse",
         "email": "lavernepeterson@mazuda.com"
     }
 ]

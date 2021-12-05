@@ -92,11 +92,11 @@ function fill_students_list(source){
 }
 
 function filter_for_department(){
+    document.getElementById("selectSemester").value = "none";
     let department = document.getElementById("selectDepartment").value;
     let result = 0;
-    console.log(department);
+
     if(department === "appliedComputerScience"){
-        console.log("TEST");
        result = students.filter(student => student.department === "Applied Computer Science");
     }
     else if(department === "mathematics"){
@@ -108,20 +108,20 @@ function filter_for_department(){
     else{
         result = students;
     }
-    console.log(result);
 
     clear_table();
     fill_students_list(result);
 }
 
 function filter_for_semester(){
+    document.getElementById("selectDepartment").value = "none";
     let semester = document.getElementById("selectSemester").value;
     let result = 0;
-    if(semester === "Summer"){
-        result = students.filter(student => summer_sem_start >= split_the_month(student.joiningDate) && summer_sem_end <= split_the_month(student.joiningDate));
-    }
     if(semester === "winter"){
-        result = students.filter(student => summer_sem_start < split_the_month(student.joiningDate) && summer_sem_end > split_the_month(student.joiningDate));
+        result = students.filter(student => summer_sem_start > split_the_month(student.joiningDate) || summer_sem_end < split_the_month(student.joiningDate));
+    }
+    else if(semester === "summer"){
+        result = students.filter(student => summer_sem_start <= split_the_month(student.joiningDate) && summer_sem_end >= split_the_month(student.joiningDate));
     }
     else{
         result = students;
@@ -143,7 +143,7 @@ function clear_table() {
 }
 
 function check_age(){
-    let selectedDate = document.getElementById("dobStudent").value;
+    let selectedDate = new Date(document.getElementById("dobStudent").value);
     let oldest = new Date(today);
     oldest.setFullYear(today.getFullYear() - max_age);
     let youngest = new Date(today);

@@ -39,7 +39,7 @@
 
             <label>Choose starting Semester:
                 <select id="selectSemester" name="selectSemester" onchange="filter_for_semester()">
-                    <option selected>none</option>
+                    <option value="none" selected>none</option>
                     <option value="summer">Summer</option>
                     <option value="winter">Winter</option>
                 </select>
@@ -50,7 +50,7 @@
 
             <label>Choose Department:
                 <select id="selectDepartment" name="selectDepartment" onchange="filter_for_department()">
-                    <option selected>none</option>
+                    <option value="none" "selected>none</option>
                     <option value="appliedComputerScience">Applied Computer Science</option>
                     <option value="mathematics">Mathematics</option>
                     <option value="biology">Biology</option>
@@ -90,14 +90,14 @@
             <label for="lastNameStudent">Last Name:</label><br>
             <input type="text" name="lastNameStudent" id="lastNameStudent" required><br>
             <label for="dobStudent">Date Of Birth:</label><br>
-            <input type="date" name="dobStudent" id="dobStudent" onblur="check_age()"><br>
+            <input type="date" name="dobStudent" id="dobStudent" oninput="check_age()"><br>
             <p>Gender:</p>
             <input type="radio" name="genderStudent" id="maleStudent">
             <label for="maleStudent">Male</label><br>
             <input type="radio" name="genderStudent" id="femaleStudent">
             <label for="femaleStudent">Female</label><br>
-            <input type="radio" name="genderStudent" id="diversStudent">
-            <label for="diversStudent">Divers</label><br>
+            <input type="radio" name="genderStudent" id="diverseStudent">
+            <label for="diverseStudent">Diverse</label><br>
 
             <label>Department
                 <select id="selectDepartmentStudent" name="department" required>
@@ -175,8 +175,8 @@
             <label for="maleStaff">Male</label><br>
             <input type="radio" name="genderStaff" id="femaleStaff">
             <label for="femaleStaff">Female</label><br>
-            <input type="radio" name="genderStaff" id="diversStaff">
-            <label for="diversStaff">Divers</label><br>
+            <input type="radio" name="genderStaff" id="diverseStaff">
+            <label for="diverseStaff">Diverse</label><br>
 
             <label for="emailStaff">Email:</label><br>
             <input type="email" name="emailStaff" id="emailStaff" required><br>
