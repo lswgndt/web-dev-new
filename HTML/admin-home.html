@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Admin</title>
     <link rel="stylesheet" href="../CSS/admin-styles.css"/>
     <script src="../JS/login.js"></script>
     <script src="../JS/admin.js"></script>
+    <script src="../JS/data.js"></script>
     <!-- FontAwesome Free Kit for cool Icons -->
     <script src="https://kit.fontawesome.com/07529d1141.js" crossorigin="anonymous"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body onload="hide_admin_lists()">
+
+<article>
 
     <div id="navContainerAdmin">
         <ul class="navbar">
@@ -27,25 +30,54 @@
     </div>
 
     <div id="studentContainer">
-        <div id="studentlist">
-            <table id="studentTable" >
-                <tr>
-                    <th onclick="sort_student_list(0)">Student ID</th>
-                    <th onclick="sort_student_list(1)">First Name</th>
-                    <th onclick="sort_student_list(2)">Last Name</th>
-                    <th>Date Of Birth</th>
-                    <th>Gender</th>
-                    <th onclick="sort_student_list(3)">Department ID</th>
-                    <th>Email</th>
-                    <th onclick="sort_student_list(4)">Joining Date</th>
-                </tr>
-                <div id="insertStudentsHere"></div>
-            </table>
-        </div>
 
         <button type="button" onclick="add_student_form()">Add Students</button>
         <button type="button" onclick="update_student()">Update Students</button>
         <button type="button" onclick="delete_student()">Delete Students</button>
+
+        <div id="semesterFilter">
+
+            <label>Choose starting Semester:
+                <select id="selectSemester" name="selectSemester" onchange="filter_for_semester()">
+                    <option selected>none</option>
+                    <option value="summer">Summer</option>
+                    <option value="winter">Winter</option>
+                </select>
+            </label><br>
+        </div>
+
+        <div id="departmentFilter">
+
+            <label>Choose Department:
+                <select id="selectDepartment" name="selectDepartment" onchange="filter_for_department()">
+                    <option selected>none</option>
+                    <option value="appliedComputerScience">Applied Computer Science</option>
+                    <option value="mathematics">Mathematics</option>
+                </select>
+            </label><br>
+        </div>
+
+        <div id="studentlist">
+            <table id="studentTable" >
+                <thead>
+                <tr>
+                    <th >Student ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Date Of Birth</th>
+                    <th>Gender</th>
+                    <th >Department ID</th>
+                    <th>Email</th>
+                    <th>Joining Date</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+
     </div>
 
     <div id="addStudent">
@@ -150,11 +182,12 @@
 </main>
 
 <footer id="contact">
-    <p>Impressum:</p>
-    <p>Lisa-Marlen Wiegandt</p>
-    <p>Matrikel Nummer: 572770</p>
-    <p>Email: <a href="mailto:wiegandtlisa@gmail.com">wiegandtlisa@gmail.com</a></p>
+    Lisa-Marlen Wiegandt <br>
+    Matrikel Nummer: 572770 <br>
+    Email: <a href="mailto:wiegandtlisa@gmail.com">wiegandtlisa@gmail.com</a>
 </footer>
+
+</article>
 
 </body>
 

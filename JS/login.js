@@ -3,6 +3,10 @@ const max_tries = 3;
 function hide_log_ins(){
     document.getElementById("adminSecretLogIn").style.display ="none";
     document.getElementById("staffSecretLogIn").style.display ="none";
+    document.getElementById("adminSecretLogIn").disable = false;
+    document.getElementById("staffSecretLogIn").disable = false;
+    document.getElementById("show_admin_login").disable = false;
+    document.getElementById("show_staff_login").diable = false;
 }
 
 function show_admin_login() {
@@ -26,6 +30,8 @@ function show_staff_login() {
 function disable_log_ins(){
     document.getElementById("adminSecretLogIn").style.display ="none";
     document.getElementById("staffSecretLogIn").style.display ="none";
+    document.getElementById("adminSecretLogIn").disable = true;
+    document.getElementById("staffSecretLogIn").disable = true;
     document.getElementById("show_admin_login").disable = true;
     document.getElementById("show_staff_login").diable = true;
 }
